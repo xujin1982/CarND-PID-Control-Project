@@ -38,12 +38,7 @@ void PID::UpdateError(double cte) {
 double PID::TotalError() {
     double temp = -p[0] * p_error - p[1] * i_error - p[2] * d_error;
     // the steering value is [-1, 1].
-    if(temp > 1){
-        temp = 1;
-    }
-    else if(temp < -1){
-        temp = -1;
-    }
+    std::min(std::max(temp, -1.0), 1.0);
     return temp;
 }
 

@@ -42,10 +42,10 @@ int main()
   // TODO: Initialize the pid variable.
 
   // PID coefficients
-  p = {0.103327,0.00988239,0.736937};
+  p = {0.259463,1e-05,2.31374};//{0.2,0.00001,2.5};//{0.103327,0.00988239,0.736937};
 
   // dp for twiddling
-  dp = {0.03,0.001,0.5};
+  dp = {0.03,0.000001,0.3};
 
   // n for counting steps
   n = 0;
@@ -89,8 +89,8 @@ int main()
         if (event == "telemetry") {
           // j[1] is the data JSON object
           double cte = std::stod(j[1]["cte"].get<std::string>());
-          double speed = std::stod(j[1]["speed"].get<std::string>());
-          double angle = std::stod(j[1]["steering_angle"].get<std::string>());
+          //double speed = std::stod(j[1]["speed"].get<std::string>());
+          //double angle = std::stod(j[1]["steering_angle"].get<std::string>());
           double steer_value;
 
           /*
