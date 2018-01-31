@@ -17,10 +17,6 @@ void PID::Init(vector<double> p) {
     PID::p_error = numeric_limits<double>::max(); // assume an extreme large error
     PID::i_error = 0.0;
     PID::d_error = 0.0;
-
-    //errorSum = 0.0;
-    //it = 0;
-    //best_err = numeric_limits<double>::max();
 }
 
 void PID::UpdateError(double cte) {
@@ -41,6 +37,7 @@ void PID::UpdateError(double cte) {
 
 double PID::TotalError() {
     double temp = -p[0] * p_error - p[1] * i_error - p[2] * d_error;
+    // the steering value is [-1, 1].
     if(temp > 1){
         temp = 1;
     }
