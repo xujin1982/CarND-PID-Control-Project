@@ -17,7 +17,9 @@ Since there is no alignment issue in the simulator, the I component has little c
 
 First, the hyperparameters were manual tuning in the order of "P", "D" and "I" to meet the criteria as a baseline. Then, the twiddle is implemented for further tuning.
 
+Here is the video which demostrates the PID controller working on the simulator.
 [Video of the PID control](https://youtu.be/2ldDyI8115k)
+
 ## Dependencies
 
 * cmake >= 3.5
