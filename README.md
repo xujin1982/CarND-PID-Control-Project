@@ -3,6 +3,20 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Reflection
+1. Describe the effect each of the P, I, D components had in your implementation.
+
+When P component is increased, the vehicle has a faster response to reduce the cte. However, the vehicle has larger oscillation with large value of P component, since the damping ratio
+is inversely proportional to the P component.
+
+When D component is increased from 0, the vehicle has an improved performance with smaller oscillation, since the D component increases the damping ratio. However, since the D component is sensitive to the measurement noise, the controller will be unstable if the D component is too large.
+
+Since there is no alignment issue in the simulator, the I component has little contribution in this project. A small value of I component is used to eliminate the steady-state error.
+
+2. Describe how the final hyperparameters were chosen.
+
+First, the hyperparameters were manual tuning in the order of "P", "D" and "I" to meet the criteria as a baseline. Then, the twiddle is implemented for further tuning.
+
 ## Dependencies
 
 * cmake >= 3.5
